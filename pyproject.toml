@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "cnn-project"
+version = "0.1.0"
+description = ""
+authors = ["SerhiiStets <stets.serhii@gmail.com>"]
+readme = "README.md"
+packages = [{include = "cnn_project"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+matplotlib = "^3.7.2"
+typing-extensions = "^4.7.1"
+requests = "^2.31.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
