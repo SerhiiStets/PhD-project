@@ -142,7 +142,7 @@ def sliding_window_search(images_dir: str, cnn):
     # if windows size is 400, step would be 1/4 of windows size)
 
     # set the window size and step size
-    window_size = (400, 400)
+    window_size = (100, 100)
     step_size = (100, 100)
 
     # call the sliding_window function

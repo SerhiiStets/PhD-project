@@ -27,7 +27,6 @@ class CNNRunner:
         self.num_epochs.set(10)
 
     def run_cnn(self):
-        print('here')
         data_loader = DataLoader(self.cars_image_dir.get(), self.not_cars_image_dir.get())
         cnn_model = CNNModel()
 

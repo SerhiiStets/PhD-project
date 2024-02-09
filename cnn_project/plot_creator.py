@@ -13,14 +13,14 @@ class PlotCreator:
         fig, axs = plt.subplots(1, 2, figsize=(12, 6))
 
         # Plot the loss and validation loss in the first subplot
-        axs[0].plot(self.model.history.history.get("loss"), label="loss")
-        axs[0].plot(self.model.history.history.get("val_loss"), label="val_loss")
+        axs[0].plot(self.model.history.history.get("loss"), label="training loss")
+        axs[0].plot(self.model.history.history.get("val_loss"), label="validation loss")
         axs[0].set_title("Loss")
         axs[0].legend()
 
         # Plot the accuracy and validation accuracy in the second subplot
-        axs[1].plot(self.model.history.history.get("accuracy"), label="accuracy")
-        axs[1].plot(self.model.history.history.get("val_accuracy"), label="val_accuracy")
+        axs[1].plot(self.model.history.history.get("accuracy"), label="training accuracy")
+        axs[1].plot(self.model.history.history.get("val_accuracy"), label="validation accuracy")
         axs[1].set_title("Accuracy")
         axs[1].legend()
 

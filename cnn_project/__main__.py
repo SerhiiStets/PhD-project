@@ -3,6 +3,8 @@ import tkinter as tk
 
 from gui import CNNGui
 import argparse
+from data_loader import DataLoader
+from cnn_model import CNNModel
 
 logging.basicConfig(
     level=logging.INFO,
@@ -27,5 +29,14 @@ if __name__ == "__main__":
         car_images_dir: str = "./data/cars/"
         not_car_images_dir: str = "./data/not_cars/"
         object_detection_dir = "./data/object_detection/"
+        data_loader = DataLoader(car_images_dir, not_car_images_dir)
+
+        cnn_model = CNNModel()
+
+        train_data, train_labels = data_loader.load_images()
+        train_data = data_loader.normalize_images_for_cnn(train_data)
+
+        cnn_model.run_model(train_data, train_labels)
+        cnn_model.prediction(show_incorrect_indices=True)
         # run_cnn(car_images_dir, not_car_images_dir, object_detection_dir)
 
